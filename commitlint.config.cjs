@@ -12,6 +12,7 @@ module.exports = {
       [
         'repo',
         'tools',
+        'docs',
         'styles',
         'e2e',
         'version',
