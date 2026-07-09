@@ -9,10 +9,13 @@ export class AnalyticsService {
   private readonly endpoints = getEndpoints();
   private readonly document = inject(DOCUMENT);
 
-  loadGA4Script() {
+  loadGtmScript() {
+    // eslint-disable-next-line no-multi-assign
+    const dataLayer = ((window as unknown as { dataLayer?: unknown[] }).dataLayer ??= []);
+    dataLayer.push({ 'gtm.start': Date.now(), event: 'gtm.js' });
     const script = this.document.createElement('script');
     script.async = true;
-    script.src = `https://www.googletagmanager.com/gtag/js?id=G-9SZHZ6B85Z`;
+    script.src = `https://www.googletagmanager.com/gtm.js?id=GTM-TJQKDC6M`;
     this.document.head.appendChild(script);
   }
 

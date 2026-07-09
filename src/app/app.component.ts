@@ -56,7 +56,7 @@ export class AppComponent {
     this.seoService.setBasicTags();
     if (this.isBrowser) {
       afterNextRender(() => {
-        this.analyticsService.loadGA4Script();
+        this.analyticsService.loadGtmScript();
       });
     }
   }
